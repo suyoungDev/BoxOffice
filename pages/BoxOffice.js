@@ -5,6 +5,7 @@ import axios from 'axios';
 import Title from '../components/Title';
 import ListItem from '../components/ListItem';
 import MovieName from '../components/MovieName';
+import moment from 'moment';
 
 const Container = styled.SafeAreaView`
   flex:1;
@@ -22,10 +23,13 @@ const Rank = styled.Text`
 
 function BoxOffice(props){
   const [list, setList] = React.useState([]);
-
+  let currentDate = moment().format('YYYYMMDD')-1;
+  
   React.useEffect(() => {
     // ajax 비동기 자바스크립트 XML(JSON)
-    axios.get('http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=ea9876218d7764c2894c4270a491e31b&targetDt=20201114')
+    let url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=ea9876218d7764c2894c4270a491e31b&';
+    url += 'targetDt=' + currentDate;
+    axios.get(url)
       .then( response => {
         // 완료가 됐을 때
         setList( response.data.boxOfficeResult.dailyBoxOfficeList );
@@ -53,6 +57,7 @@ function BoxOffice(props){
             <MovieName>{ item.movieNm }</MovieName>
           </ListItem>
         ))}
+        <Rank>{currentDate}</Rank>
       </Contents>
     </Container>
   )
