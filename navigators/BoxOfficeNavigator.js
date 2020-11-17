@@ -9,16 +9,16 @@ const Stack = createStackNavigator();
 
 function BoxOfficeNavigator(){
   return(
-  <Stack.Navigator options={{headerShown:false}}>
-    <Stack.Screen name="BoxOffice" 
-    component={BoxOffice}
-    options={{headerShown:false}} 
-    />
-    <Stack.Screen name="MovieDetail"
-    component={MovieDetail}
-    options={{headerShown:false}} 
-    />
-  </Stack.Navigator>
+    <Stack.Navigator options={{headerShown:false}}>
+      <Stack.Screen name="BoxOffice" 
+      component={BoxOffice}
+      options={{headerShown:false}} 
+      />
+      <Stack.Screen name="MovieDetail"
+      component={MovieDetail}
+      options={{headerShown:false}} 
+      />
+    </Stack.Navigator>
   )
 }
 

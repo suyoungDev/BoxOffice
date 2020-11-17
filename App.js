@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import BoxOfficeNavigator from './navigators/BoxOfficeNavigator';
+import AppNavigator from './navigators/AppNavigator';
 
 const Theme = {
   ...DefaultTheme,
@@ -14,7 +14,7 @@ function App(){
   return (
     <>
       <NavigationContainer theme={Theme}>
-       <BoxOfficeNavigator />
+       <AppNavigator />
       </NavigationContainer>
     </>
   );  
