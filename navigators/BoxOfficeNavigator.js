@@ -1,7 +1,7 @@
- import React from 'react';
- import { createStackNavigator } from '@react-navigation/stack';
- import BoxOffice from '../pages/BoxOffice';
- import MovieDetail from '../pages/MovieDetail';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import BoxOffice from '../pages/BoxOffice';
+import MovieDetail from '../pages/MovieDetail';
 
 
 

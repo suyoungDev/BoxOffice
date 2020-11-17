@@ -2,6 +2,9 @@ import React from 'react';
 import {ActivityIndicator} from 'react-native'
 import styled from 'styled-components';
 import axios from 'axios';
+import Title from '../components/Title';
+import ListItem from '../components/ListItem';
+import MovieName from '../components/MovieName';
 
 const Container = styled.SafeAreaView`
   flex:1;
@@ -14,26 +17,6 @@ const Rank = styled.Text`
   font-weight: bold;
   color: #bcaaa4;
   margin-right: 20px;
-`;
-const Title = styled.Text`
-  font-size: 29px;
-  font-weight: bold;
-  letter-spacing: 6px;
-  padding: 10px 0px;
-  color: #8c7b75;
-`;
-const ListItem = styled.TouchableOpacity`
-  padding: 11px 20px 11px 10px;
-  border-bottom-color: #e5e5e5;
-  border-bottom-width: 1px;
-  flex-direction: row;
-  align-items: center;
-
-`;
-const MovieName= styled.Text`
-  font-size: 18px;
-  font-weight: bold;
-  padding: 2px 0px;
 `;
 
 

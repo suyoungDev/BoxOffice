@@ -55,7 +55,7 @@ const HeaderTitle = styled.Text`
 function MovieDetail(props){
   const [info, setInfo] = React.useState(null);
   React.useEffect( ()=>{
-    let url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=ea9876218d7764c2894c4270a491e31b';
+    let url = 'https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=ea9876218d7764c2894c4270a491e31b';
     url += '&movieCd=' + props.route.params.movieCd;
     axios.get(url)
       .then(respose => {
