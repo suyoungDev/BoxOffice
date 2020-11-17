@@ -57,13 +57,17 @@ function BoxOffice(props){
     <Container>
       <Contents>
         <Title>Box Office</Title>
+        
         { list.length === 0 && (
-              <ActivityIndicator size="large" color="#0000ff" />
+              <ActivityIndicator size="large" color="" />
         )}
-        {list.map( elem => (
-          <ListItem key={ elem.movieCd }>
-            <Rank>{ elem.rank }</Rank>
-            <MovieName>{ elem.movieNm }</MovieName>
+
+        {list.map( item => (
+          <ListItem key={item.movieCd} onPress={()=>{
+            props.navigation.navigate('MovieDetail', {movieCd: item.movieCd});
+          }}>
+            <Rank>{ item.rank }</Rank>
+            <MovieName>{ item.movieNm }</MovieName>
           </ListItem>
         ))}
       </Contents>
