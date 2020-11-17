@@ -76,7 +76,7 @@ function MovieDetail(props){
       </Header>
       <Contents>
         { info === null ?
-          <ActivityIndicator size="large" color="#8c7b75" /> 
+          <ActivityIndicator size="large" color="#ffcdd2" /> 
           : (
             <>
             <Title>{info.movieNm}</Title>

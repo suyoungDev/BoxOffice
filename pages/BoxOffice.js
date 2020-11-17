@@ -59,7 +59,7 @@ function BoxOffice(props){
         <Title>Box Office</Title>
         
         { list.length === 0 && (
-              <ActivityIndicator size="large" color="" />
+              <ActivityIndicator size="large" color="#ffcdd2" />
         )}
 
         {list.map( item => (
