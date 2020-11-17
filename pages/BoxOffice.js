@@ -24,18 +24,17 @@ const Rank = styled.Text`
 function BoxOffice(props){
   const [list, setList] = React.useState([]);
   let currentDate = moment().format('YYYYMMDD')-1;
+  // 당일 date는 정보가 업뎃이 안되서인지 -_- 안되길래 전날걸로..쩝..
   
   React.useEffect(() => {
     // ajax 비동기 자바스크립트 XML(JSON)
-    let url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=ea9876218d7764c2894c4270a491e31b&';
+    let url = 'https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=ea9876218d7764c2894c4270a491e31b&';
     url += 'targetDt=' + currentDate;
     axios.get(url)
       .then( response => {
-        // 완료가 됐을 때
         setList( response.data.boxOfficeResult.dailyBoxOfficeList );
       } )
       .catch( error => {
-        // 예외가 발생했을 때
         alert(error.message);
       } )
   }, []);
@@ -57,7 +56,6 @@ function BoxOffice(props){
             <MovieName>{ item.movieNm }</MovieName>
           </ListItem>
         ))}
-        <Rank>{currentDate}</Rank>
       </Contents>
     </Container>
   )
